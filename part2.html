@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar with Profile</title>
+    <style>
+      body {
+        background-image: url("part2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: cursive;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .navbar {
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 5px;
+        margin: 10px;
+      }
+
+      .navbar a {
+        color: rgb(235, 232, 232);
+        text-align: center;
+        padding: 16px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+      }
+
+      .navbar a:hover {
+        background-color: #333;
+        border-radius: 5px;
+      }
+
+      .profile {
+        height: 400px;
+        width: 300px;
+        border: 2px solid black;
+        margin: 100px auto;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transition: all 0.5s ease;
+        text-align: center;
+        padding: 20px;
+        backdrop-filter: blur(8px);
+      }
+
+      .profile:hover {
+        height: 450px;
+        width: 450px;
+        font-size: 20px;
+      }
+
+      #img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        border: 1px solid black;
+        transition: all 1s ease;
+      }
+
+      .profile:hover #img {
+        height: 100px;
+        width: 100px;
+        margin: 0 auto;
+      }
+
+      #name {
+        margin-top: 20px;
+      }
+
+      #intro {
+        margin-top: 10px;
+      }
+
+      .form {
+        width: 400px;
+        margin: 50px auto;
+        padding: 25px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      #reg-form {
+        background-color: black;
+        color: rgb(235, 232, 232);
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      label {
+        text-align: left;
+
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .gender {
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      .hobbies {
+        text-align: left;
+        margin-top: 10px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: black;
+        color: white;
+
+        border-radius: 6px;
+
+        font-size: 16px;
+      }
+
+      .button-section {
+        width: 400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 570px;
+        text-align: center;
+      }
+
+      .back {
+        background-color: #0d0e10;
+        height: 35px;
+        width: 80px;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .back:hover {
+        background-color: whitesmoke;
+        color: black;
+        height: 45px;
+        width: 90px;
+      }
+
+      .submit {
+        background-color: black;
+        height: 35px;
+        width: 80px;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .submit:hover {
+        color: #000;
+        background-color: #ccc;
+        height: 45px;
+        width: 90px;
+      }
+      .next {
+        background-color: black;
+        height: 35px;
+        width: 80px;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .next:hover {
+        background-color: whitesmoke;
+        color: black;
+        height: 45px;
+        width: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="profile">
+      <img id="img" src="hansolo.png" alt="Profile Image" />
+      <h2 id="name">SAURABH</h2>
+      <p id="intro">
+        My name is saurabh and I am from shahabad.<br>
+        I passed my class 10th and 12th from manorama inter college,<br>
+        and I am currently pursuing B.C.A from Hi-Tech Institute of Engineering and Technology.
+      </p>
+    </div>
+
+    <div class="form">
+      <h2 id="reg-form">Registration Form</h2>
+      <form>
+        <label for="reg-name">Name:</label>
+        <input
+          type="text"
+          id="reg-name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="reg-email">Email:</label>
+        <input
+          type="email"
+          id="reg-email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="reg-password">Password:</label>
+        <input
+          type="password"
+          id="reg-password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <div class="gender">
+          <label>Gender:</label><br />
+          <input type="radio" id="male" name="gender" value="Male" />
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="Female" />
+          <label for="female">Female</label>
+
+          <input type="radio" id="other" name="gender" value="Other" />
+          <label for="other">Other</label>
+        </div>
+
+        <div class="hobbies">
+          <label>Hobbies:</label><br />
+          <input type="checkbox" id="reading" name="hobbies" value="Reading" />
+          <label for="reading">Reading</label>
+
+          <input type="checkbox" id="gaming" name="hobbies" value="Gaming" />
+          <label for="gaming">Gaming</label>
+
+          <input
+            type="checkbox"
+            id="traveling"
+            name="hobbies"
+            value="Traveling"
+          />
+          <label for="traveling">Traveling</label>
+        </div>
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+
+    <div class="button-section">
+      <button class="back">Back</button>
+      <button class="submit">Sumbit</button>
+      <button class="next">Next</button>
+    </div>
+  </body>
+</html>
